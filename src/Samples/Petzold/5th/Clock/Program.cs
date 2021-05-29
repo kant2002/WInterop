@@ -14,6 +14,7 @@ using WInterop.Gdi;
 using WInterop.SystemInformation;
 using WInterop.Windows;
 using System.Drawing;
+using WInterop.Modules;
 
 namespace Clock
 {
@@ -38,6 +39,10 @@ namespace Clock
         private readonly GdiPlusBrush _blackBrush = new GdiPlusBrush(Color.Black);
         private readonly GdiPlusBrush _whiteBrush = new GdiPlusBrush(Color.White);
 #endif
+        public Clock()
+            : base(moduleInstance: Modules.GetModuleHandle(null))
+        {
+        }
 
         private void SetIsotropic(DeviceContext hdc)
         {
