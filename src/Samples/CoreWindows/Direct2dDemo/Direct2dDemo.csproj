@@ -3,10 +3,18 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <IlcGenerateStackTraceData>false</IlcGenerateStackTraceData>
+    <IlcDisableReflection>true</IlcDisableReflection>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\WInterop.Desktop\WInterop.Desktop.csproj" />
     <ProjectReference Include="..\..\..\WInterop.DirectX\WInterop.Direct2d.csproj" />
     <ProjectReference Include="..\..\..\WInterop.GdiPlus\WInterop.GdiPlus.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.DotNet.ILCompiler" Version="6.0.0-*" />
+    <PackageReference Include="WinFormsComInterop.SourceGenerator" Version="0.2.6" ReferenceOutputAssembly="false" OutputItemType="Analyzer" />
   </ItemGroup>
 </Project>

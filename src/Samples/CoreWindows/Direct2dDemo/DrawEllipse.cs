@@ -15,7 +15,8 @@ namespace Direct2dDemo
         private ISolidColorBrush _silverBrush;
         private readonly IStrokeStyle _dashDotDotStyle;
 
-        public DrawEllipse() : base()
+        public DrawEllipse()
+            : base(moduleInstance: WInterop.Modules.Modules.GetModuleHandle(null))
         {
             StrokeStyleProperties style = new StrokeStyleProperties(dashCap: CapStyle.Triangle, miterLimit: 10.0f, dashStyle: DashStyle.DashDotDot);
             _dashDotDotStyle = Direct2dFactory.CreateStrokeStyle(style);

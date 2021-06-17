@@ -21,7 +21,8 @@ namespace Direct2dDemo
         private IBitmapBrush _gridPatternBrush;
         private IRadialGradientBrush _radialGradientBrush;
 
-        public PathGeometries() : base()
+        public PathGeometries()
+            : base(moduleInstance: WInterop.Modules.Modules.GetModuleHandle(null))
         {
             // Left mountain
             _leftMountainGeometry = Direct2dFactory.CreatePathGeometry();

@@ -14,6 +14,11 @@ namespace Direct2dDemo
         private ISolidColorBrush _lightSlateGrayBrush;
         private ISolidColorBrush _cornflowerBlueBrush;
 
+        public Direct2dDemo()
+            : base(moduleInstance: WInterop.Modules.Modules.GetModuleHandle(null))
+        {
+        }
+
         protected override void CreateResources()
         {
             _lightSlateGrayBrush = RenderTarget.CreateSolidColorBrush(Color.LightSlateGray);

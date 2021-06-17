@@ -2,6 +2,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using System;
+using System.Runtime.InteropServices;
 using WInterop.Windows;
 
 namespace Direct2dDemo
@@ -11,6 +12,7 @@ namespace Direct2dDemo
         [STAThread]
         private static void Main()
         {
+            ComWrappers.RegisterForMarshalling(new DirectXComWrappers());
             Windows.CreateMainWindowAndRun(new Direct2dDemo(), "Direct2d Sample App");
             Windows.CreateMainWindowAndRun(new DrawEllipse(), "Drawing ellipses");
             Windows.CreateMainWindowAndRun(new PathGeometries(), "Path geometries");
